@@ -37,11 +37,11 @@
                 },
                 {
                     "name": "oracleFeed",
-                    "type": "publicKey"
+                    "type": "pubkey"
                 },
                 {
                     "name": "devWallet",
-                    "type": "publicKey"
+                    "type": "pubkey"
                 },
                 {
                     "name": "endTime",
@@ -180,11 +180,11 @@
                     },
                     {
                         "name": "oracleFeed",
-                        "type": "publicKey"
+                        "type": "pubkey"
                     },
                     {
                         "name": "devWallet",
-                        "type": "publicKey"
+                        "type": "pubkey"
                     },
                     {
                         "name": "poolA",
@@ -210,7 +210,7 @@
                     },
                     {
                         "name": "authority",
-                        "type": "publicKey"
+                        "type": "pubkey"
                     },
                     {
                         "name": "winningOutcome",
@@ -230,11 +230,11 @@
                 "fields": [
                     {
                         "name": "market",
-                        "type": "publicKey"
+                        "type": "pubkey"
                     },
                     {
                         "name": "owner",
-                        "type": "publicKey"
+                        "type": "pubkey"
                     },
                     {
                         "name": "outcomeId",
