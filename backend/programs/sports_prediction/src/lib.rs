@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
-use anchor_lang::solana_program::system_program;
+use anchor_lang::system_program::{transfer, Transfer};
 
-declare_id!("SportsPred11111111111111111111111111111111");
+declare_id!("11111111111111111111111111111111");
 
 #[program]
 pub mod sports_prediction {
