@@ -28,6 +28,7 @@ export default function RootLayout({
     <html lang="en" className={`dark ${inter.variable} ${barlow.variable}`} suppressHydrationWarning>
       <body
         className="font-sans antialiased selection:bg-kayo-green selection:text-black"
+        suppressHydrationWarning
       >
         <SolanaProvider>
           {children}
