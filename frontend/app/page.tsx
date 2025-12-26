@@ -253,6 +253,11 @@ const KayoMarketCard = ({ market, onClick }: { market: Market; onClick: (m: Mark
 export default function Home() {
   const { markets, isLoading } = useMarkets();
   const [selectedMarket, setSelectedMarket] = useState<Market | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#00FF00] selection:text-black overflow-x-hidden">
@@ -273,7 +278,9 @@ export default function Home() {
               <a href="#" className="hover:text-[#00FF00] transition-colors">Live Feed</a>
               <a href="#" className="hover:text-[#00FF00] transition-colors">Protocol</a>
             </div>
-            <WalletMultiButton className="!bg-[#00FF00] !text-black !rounded-2xl !font-black !text-xs !px-8 hover:!scale-105 transition-transform !uppercase !tracking-widest !shadow-[0_0_20px_rgba(0,255,0,0.2)]" />
+            {mounted && (
+              <WalletMultiButton className="!bg-[#00FF00] !text-black !rounded-2xl !font-black !text-xs !px-8 hover:!scale-105 transition-transform !uppercase !tracking-widest !shadow-[0_0_20px_rgba(0,255,0,0.2)]" />
+            )}
           </div>
         </div>
       </nav>
