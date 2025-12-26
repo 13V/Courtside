@@ -10,8 +10,8 @@ async function runOracle() {
     const provider = anchor.AnchorProvider.env();
     anchor.setProvider(provider);
 
-    const idl = JSON.parse(fs.readFileSync("./target/idl/sports_prediction.json", "utf8"));
-    const programId = new PublicKey("GvC6eD5B6z9M1vRzT1p7fQyYvA5xP7Z1aB2c3D4e5F6g"); // UPDATE THIS
+    const idl = JSON.parse(fs.readFileSync("../../frontend/app/idl/sports_prediction.json", "utf8"));
+    const programId = new PublicKey("5oCaNW77tTwpAdZqhyebZ73zwm1DtfR3Ye7Cy9VWyqtT");
     const program = new Program(idl, programId, provider);
 
     console.log("Oracle Worker Started...");

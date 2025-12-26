@@ -23,11 +23,21 @@ export const useSportsProgram = () => {
                 preflightCommitment: "processed",
             });
 
-            console.log("useSportsProgram: Initializing Program with provider...");
+            // THE DEFINITIVE FIX: 
+            // 1. Convert IDL string to plain object to break any module proxying
+            // 2. Force 'publicKey' -> 'pubkey' (lowercase) for Anchor 0.30+ compatibility
+            const idlString = JSON.stringify(idl).replace(/"publicKey"/g, '"pubkey"');
+            const rawIdl = JSON.parse(idlString);
 
-            // Convert IDL to a plain JS object
-            const rawIdl = JSON.parse(JSON.stringify(idl));
-            const p = new Program(rawIdl, provider);
+            const programId = new PublicKey("5oCaNW77tTwpAdZqhyebZ73zwm1DtfR3Ye7Cy9VWyqtT");
+
+            console.log("useSportsProgram: Initializing Program with ID:", programId.toString());
+            console.log("useSportsProgram: Finalized IDL types:", rawIdl.types);
+            console.log("useSportsProgram: Finalized IDL accounts:", rawIdl.accounts);
+            console.log("useSportsProgram: Finalized IDL instructions:", rawIdl.instructions);
+
+            // Pass BOTH the fixed IDL and the explicit programId
+            const p = new Program(rawIdl, programId, provider);
 
             console.log("useSportsProgram: Program initialized successfully!");
             return p;
