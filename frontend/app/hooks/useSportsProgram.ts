@@ -19,7 +19,14 @@ export const useSportsProgram = () => {
             preflightCommitment: "processed",
         });
 
-        return new Program(idl as any, provider);
+        try {
+            const programId = new PublicKey("5oCaNW77tTwpAdZqhyebZ73zwm1DtfR3Ye7Cy9VWyqtT");
+            console.log("Initializing Program with ID:", programId.toString());
+            return new Program(idl as any, provider);
+        } catch (e) {
+            console.error("Failed to initialize Program:", e);
+            return null;
+        }
     }, [connection, wallet]);
 
     return { program };

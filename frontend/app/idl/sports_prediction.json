@@ -1,9 +1,10 @@
 {
-    "version": "0.1.0",
+    "address": "5oCaNW77tTwpAdZqhyebZ73zwm1DtfR3Ye7Cy9VWyqtT",
     "metadata": {
-        "address": "5oCaNW77tTwpAdZqhyebZ73zwm1DtfR3Ye7Cy9VWyqtT"
+        "name": "sports_prediction",
+        "version": "0.1.0",
+        "spec": "0.1.0"
     },
-    "name": "sports_prediction",
     "instructions": [
         {
             "name": "initializeMarket",
